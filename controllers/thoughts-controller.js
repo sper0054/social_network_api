@@ -40,8 +40,8 @@ const thoughtsController = {
     },
 
     //get thought by Id
-    getThoughtsById({params}, res) {
-        Thoughts.findOne({ _id: params.id })
+    getThoughtsById({ params }, res) {
+        Thoughts.findOne({ _id: params.thoughtsid })
             .populate({
                 path: 'reactions',
                 select: '-__v'
@@ -62,7 +62,7 @@ const thoughtsController = {
 
     //update thought by id
     updateThoughts({params, body}, res) {
-        Thoughts.findOneAndUpdate({_id: params.id}, body, {new: true, runValidators: true})
+        Thoughts.findOneAndUpdate({_id: params.thoughtsid}, body, {new: true, runValidators: true})
             .populate({
                 path: 'reactions',
                 select: '-__v'
