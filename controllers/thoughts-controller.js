@@ -41,7 +41,7 @@ const thoughtsController = {
 
     //get thought by Id
     getThoughtsById({ params }, res) {
-        Thoughts.findOne({ _id: params.thoughtsid })
+        Thoughts.findOne({ _id: params.thoughtId })
             .populate({
                 path: 'reactions',
                 select: '-__v'
@@ -61,13 +61,8 @@ const thoughtsController = {
     },
 
     //update thought by id
-    updateThoughts({params, body}, res) {
-        Thoughts.findOneAndUpdate({_id: params.thoughtsid}, body, {new: true, runValidators: true})
-            .populate({
-                path: 'reactions',
-                select: '-__v'
-            })
-            .select('-___v')
+    updateThoughts({ params, body }, res) {
+        Thoughts.findOneAndUpdate({ _id: params.thoughtId }, body, {new: true, runValidators: true})
             .then(dbThoughtsData => {
                 if (!dbThoughtsData) {
                     res.status(404).json({message: 'No thoughts found with this id!'});
