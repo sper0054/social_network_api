@@ -20,7 +20,7 @@ const thoughtsController = {
     },
 
     //get all thoughts
-    getAllThoughts(req,res) {
+    getAllThoughts(req, res) {
         Thoughts.find({})
             .populate({
                 path: 'reactions',
