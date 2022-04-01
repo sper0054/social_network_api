@@ -6,7 +6,7 @@ As a social media startup, I want an API for my social network that uses a NoSQL
 This back-end application allows users to connect with friends to share their thoughts and reactions.
 
 ## How it looks
-Videos demoing functionality using Insomnia, can be found in the videos folder in the repository.
+Videos demoing functionality using Insomnia, can be found in the ![videos folder](https://github.com/sper0054/social_network_api/tree/main/videos)
 
 ![ScreenShot](https://github.com/sper0054/social_network_api/blob/main/insomnia%20snapshot.png)
 
